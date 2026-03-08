@@ -8,80 +8,93 @@
 </head>
 <body>
 
-<h1>🍔 XIS RAIZ - Sabor de Verdade</h1>
 
-<div class="cardapio">
+  <h1>🍔 XIS RAIZ - Sabor de Verdade</h1>
 
-  <input type="text" id="nome" placeholder="Seu nome">
-  <input type="text" id="endereco" placeholder="Seu endereço">
 
-  <select id="pagamento">
-    <option value="">Forma de pagamento</option>
-    <option value="Dinheiro">Dinheiro</option>
-    <option value="Pix">Pix</option>
-    <option value="Cartão">Cartão</option>
-  </select>
+  <div class="cardapio">
 
-  <div class="item">
-    <img src="imagens/X-Salada.jpg">
-    <div class="info">
-      <span>X Salada - R$ 22.00</span>
-      <input type="number" min="0" value="0"
-             data-name="X Salada"
-             data-price="22.00">
+
+    <input type="text" id="nome" placeholder="Seu nome">
+    <input type="text" id="endereco" placeholder="Seu endereço">
+
+
+    <select id="pagamento" onchange="mostrarPix()">
+      <option value="">Forma de pagamento</option>
+      <option value="Dinheiro">Dinheiro</option>
+      <option value="Pix">Pix</option>
+      <option value="Cartão">Cartão</option>
+    </select>
+
+
+    <div class="item">
+      <img src="imagens/X-Salada.jpg" alt="X Salada">
+      <div class="info">
+        <span>X Salada - R$ 22.00</span>
+        <input type="number" min="0" value="0" data-name="X Salada" data-price="22.00"
+      </div>
     </div>
-  </div>
 
-  <div class="item">
-    <img src="imagens/X-Frango.jpg">
-    <div class="info">
-      <span>X Frango - R$ 24.00</span>
-      <input type="number" min="0" value="0"
-             data-name="X Frango"
-             data-price="24.00">
+
+    <div class="item">
+      <img src="imagens/X-Frango.jpg" alt="X Frango">
+      <div class="info">
+        <span>X Frango - R$ 24.00</span>
+        <input type="number" min="0" value="0" data-name="X Frango" data-price="24.00"
+      </div>
     </div>
-  </div>
 
-  <div class="item">
-  <img src="imagens/X-Calabresa.jpg">
-  <div class="info">
-    <span>X Calabresa - R$ 26.00</span>
-    <input type="number" min="0" value="0"
-           data-name="X Calabresa"
-           data-price="26.00">
-  </div>
-</div>
 
-  <div class="item">
-    <img src="imagens/refri.jpg">
-    <div class="info">
-      <span>Coca-Cola 350ml - R$ 6.00</span>
-      <input type="number" min="0" value="0"
-             data-name="Coca-Cola 350ml"
-             data-price="5.00">
+    <div class="item">
+      <img src="imagens/X-Calabresa.jpg" alt="X Calabresa">
+      <div class="info">
+        <span>X Calabresa - R$ 26.00</span>
+        <input type="number" min="0" value="0" data-name="X Calabresa" data-price="26.
+      </div>
     </div>
+
+
+    <div class="item">
+      <img src="imagens/refri.jpg" alt="Coca-Cola 350ml">
+      <div class="info">
+        <span>Coca-Cola 350ml - R$ 5.00</span>
+        <input type="number" min="0" value="0" data-name="Coca-Cola 350ml" data-price=
+      </div>
+    </div>
+
+
+    <div class="item">
+      <img src="imagens/refri2lt.jpg" alt="Refri 2 litros">
+      <div class="info">
+        <span>Refri 2 litros - R$ 15.00</span>
+        <input type="number" min="0" value="0" data-name="Refri 2 litros" data-price="
+      </div>
+    </div>
+
+
+    <textarea id="observacao" placeholder="Observações"></textarea>
+
+
+    <div class="total">
+      Total: R$ <span id="total">0.00</span>
+    </div>
+
+
+    <div id="pixBox" class="pix-box oculto">
+      <h3>Pagamento via Pix</h3>
+      <img src="imagens/QRcode.jpg" alt="QR Code Pix" class="qr-code">
+      <p class="chave-titulo">Chave Pix:</p>
+      <p class="chave-pix" id="chavePix">xisraiz@hotmail.com</p>
+      <button type="button" class="btn-pix" onclick="copiarPix()">Copiar chave Pix</bu
+    </div>
+
+
+    <button type="button" onclick="enviarPedido()">Enviar Pedido</button>
+
+
   </div>
-   <div class="item">
- <img src="imagens/refri2lt.jpg">
- <div class="info">
-   <span>Refri 2 litros - R$ 15.00</span>
-   <input type="number" min="0" value="0"
-          data-name="Refri 2 litros"
-          data-price="15.00">
- </div>
- </div>
 
-  <textarea id="observacao" placeholder="Observações"></textarea>
 
-  <div class="total">
-    Total: R$ <span id="total">0.00</span>
-  </div>
-
-  <button onclick="enviarPedido()">Enviar Pedido</button>
-
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
-
 </html>
