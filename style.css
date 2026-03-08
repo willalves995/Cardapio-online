@@ -1,43 +1,58 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("imagens/fundo.jpg"); /* caminho da imagem */
-  background-size: cover;       /* cobre toda a tela */
-  background-position: center;  /* centraliza */
-  background-repeat: no-repeat; /* não repete */
-  min-height: 100vh;
   font-family: Arial, sans-serif;
+  background-image: url("imagens/fundo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
+
 
 h1 {
   text-align: center;
-  padding: 20px;
+  color: white;
+  padding: 20px 10px;
   margin: 0;
-  color: rgb(177, 8, 8);
+  font-size: 28px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7)
 }
 
-/* ===== CARDÁPIO ===== */
+
 .cardapio {
-  max-width: 550px;
+  max-width: 700px;
   margin: 30px auto;
-  background: rgba(9, 10, 10, 0.3); /* transparência */
+  background: rgba(9, 10, 10, 0.75);
   padding: 20px;
   border-radius: 12px;
-  backdrop-filter: blur(5px); /* efeito vidro opcional */
+  backdrop-filter: blur(5px);
 }
 
-/* ===== ITENS ===== */
+
+#nome,
+#endereco,
+#pagamento,
+#observacao {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+
 .item {
   display: flex;
   align-items: center;
   gap: 15px;
   margin-bottom: 20px;
-  background: #b67109f5;
+  background: #f9fbfbf5;
   padding: 10px;
   border-radius: 10px;
-font-weight:bold;
 }
-
 
 
 .item img {
@@ -47,51 +62,153 @@ font-weight:bold;
   border-radius: 10px;
 }
 
-/* ===== INFORMAÇÕES ===== */
+
 .info {
   flex: 1;
 }
 
+
 .info span {
   display: block;
+  font-size: 18px;
+  font-weight: bold;
   margin-bottom: 8px;
+  color: #222;
 }
 
-/* ===== CAMPOS ===== */
-input, select, textarea {
-  width: 100%;
+
+.info input {
+  width: 80px;
   padding: 8px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  border: none;
+  font-size: 16px;
 }
 
-input[type="number"] {
-  width: 70px;
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
 }
 
-/* ===== BOTÃO ===== */
+
+.total {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+}
+
+
 button {
   width: 100%;
-  padding: 12px;
-  background: #ff6600;
+  padding: 14px;
+  background: #32bcad;
   color: white;
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
+  margin-top: 10px;
 }
+
 
 button:hover {
-  background: #e65c00;
+  opacity: 0.9;
 }
 
-/* ===== TOTAL ===== */
-.total {
-  font-size: 18px;
-  margin: 15px 0;
-  text-align: right;
-  color: white;
 
+.pix-box {
+  background: rgba(255, 255, 255, 0.97);
+  padding: 18px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.oculto {
+  display: none;
+}
+
+
+.pix-box h3 {
+  margin-top: 0;
+  color: #222;
+}
+
+
+.qr-code {
+  width: 220px;
+  max-width: 100%;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+
+.chave-titulo {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+
+.chave-pix {
+  font-size: 14px;
+  color: #444;
+  word-break: break-all;
+  background: #f2f2f2;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+
+.btn-pix {
+  background: #32bcad;
+  margin-top: 10px;
+}
+
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 22px;
+  }
+
+
+  .cardapio {
+    margin: 15px;
+    padding: 15px;
+  }
+
+
+  .item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+  .item img {
+    width: 120px;
+    height: 120px;
+  }
+
+
+  .info input {
+    width: 100px;
+  }
+
+
+  .info span {
+    font-size: 16px;
+  }
+
+
+  .total {
+    font-size: 20px;
+  }
+
+
+  button {
+    font-size: 16px;
+  }
 }
